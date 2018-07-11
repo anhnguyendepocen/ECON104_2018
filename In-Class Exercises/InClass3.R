@@ -22,7 +22,7 @@ colnames(CI95LB)=colnames(data_subset[-1])
 colnames(CI95UB)=colnames(data_subset[-1])
 
 for (jj in 1:(length(data_subset)-1)){
-  reg0=lm(data_subset$crime~data_subset[,jj],data=regdata)
+  reg0=lm(data_subset$crime~data_subset[,jj])
   reg=summary(reg0)
   
   ttest95[,jj]=reg$coefficients[,3]>=1.96
